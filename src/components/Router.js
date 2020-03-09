@@ -7,6 +7,7 @@ import SignedOutRoute from "components/SignedOutRoute";
 import Error404Page from "pages/common/Error404Page";
 
 const AuthPage = lazy(() => import("pages/auth/RootPage"));
+const DriversPage = lazy(() => import("pages/drivers/RootPage"));
 
 export default () => {
 
@@ -15,6 +16,8 @@ export default () => {
       <SignedOutRoute path={routes.auth.root} component={AuthPage}/>
 
       {/*<Route path={routes.admin} exact render={() => (window.location.href = `${routes.admin}/`)}/>*/}
+      <SignedInRoute path={routes.drivers.root} component={DriversPage}/>
+      <SignedInRoute path={routes.root} component={DriversPage}/>
       <Route component={Error404Page}/>
     </Switch>
   );

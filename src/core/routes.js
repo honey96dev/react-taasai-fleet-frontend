@@ -9,6 +9,21 @@ export const routes = {
     forgotPassword: "/auth/forgot-password",
     resetPassword: "/auth/reset-password",
   },
+  drivers: {
+    root: "/drivers",
+    list: "/drivers/list",
+    detail: "/drivers/detail",
+    add: "/drivers/add",
+  },
+  location: {
+    root: "/location",
+    main: "/location/main",
+    map: "/location/map",
+  },
+  commission: {
+    root: "/commission",
+    main: "/commission/main",
+  },
 };
 
 export default routes;

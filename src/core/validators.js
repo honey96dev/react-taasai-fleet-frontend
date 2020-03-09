@@ -1,4 +1,5 @@
 // import libphonenumber from "google-libphonenumber";
+import { isValidPhoneNumber } from "react-phone-number-input";
 
 export default {
   isEmail: (value) => {
@@ -9,15 +10,13 @@ export default {
     const re = /^[0-9a-zA-Z_][0-9a-zA-Z_.-]+$/;
     return re.test(String(value).toLowerCase());
   },
-  // isPhoneNumber: (value) => {
-  //   const phoneUtil = libphonenumber.PhoneNumberUtil.getInstance();
-  //   try {
-  //     const number = phoneUtil.parseAndKeepRawInput(value);
-  //     return phoneUtil.isValidNumber(number);
-  //   } catch (e) {
-  //     return false;
-  //   }
-  // },
+  isPhoneNumber: (value) => {
+    try {
+      return isValidPhoneNumber(value);
+    } catch (e) {
+      return false;
+    }
+  },
   isURL: value => {
     return value.startsWith("http://") || value.startsWith("https://");
   },

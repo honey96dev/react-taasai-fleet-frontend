@@ -111,6 +111,11 @@ export const SCOPE = {
   CURRENT: "CURRENT",
 };
 
+export const SIDE_NAV = {
+  WIDTH: 260,
+  BREAKPOINT: 1200,
+};
+
 export const STATUS = {
   UNKNOWN: "unknown",
 };
@@ -138,5 +143,6 @@ export default {
   PAGINATION,
   RESULT,
   SCOPE,
+  SIDE_NAV,
   VALIDATION,
 };

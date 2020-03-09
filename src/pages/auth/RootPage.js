@@ -31,6 +31,7 @@ export default () => {
               {/*<Route path={routes.auth.signUp} exact component={SignUpPage}/>*/}
               {/*<Route path={routes.auth.forgotPassword} component={ForgotPasswordPage}/>*/}
               {/*<Route path={`${routes.auth.resetPassword}/:email?/:token?`} component={ResetPasswordPage}/>*/}
+              <Route path={routes.auth.root} component={SignInPage}/>
               <Route component={Error404}/>
             </Switch>
           </MDBCol>

@@ -1,0 +1,15 @@
+@import "../../assets/consts";
+
+.PhoneInput .PhoneInputCountryIcon {
+  height: 1.5rem;
+}
+
+.PhoneInput .PhoneInputCountryIcon--border {
+  background-color: unset;
+  box-shadow: unset;
+}
+
+.PhoneInput input.PhoneInputInput {
+  margin-left: 6px;
+  padding: 6px;
+}

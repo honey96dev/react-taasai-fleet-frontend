@@ -1,0 +1,2 @@
+
+export const BREADCRUMB_SET_DATA = "BREADCRUMB_SET_DATA";

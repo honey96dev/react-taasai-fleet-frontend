@@ -1,7 +1,19 @@
 import fetch from "apis/fetch";
-import {GET} from "apis/constants";
+import {GET, POST} from "apis/constants";
+import apis from "../core/apis";
 
 export default {
+  getVehicleTypes: (params) => {
+    return new Promise((resolve, reject) => {
+      fetch(POST, apis.core.getVehicleTypes, params)
+        .then(res => {
+          resolve(res);
+        }, err => {
+          reject(err);
+        });
+    });
+  },
+
   downloadFile: ({url, filename, params}) => {
     return new Promise((resolve, reject) => {
       fetch(GET, url, params, {Accept: "application/pdf"}, {responseType: "blob"})

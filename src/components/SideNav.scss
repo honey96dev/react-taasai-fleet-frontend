@@ -1,0 +1,22 @@
+@import "../assets/consts";
+
+$toggle-x: 5px;
+$toggle-y: 5px;
+
+.side-nav * {
+  font-size: 1rem !important;
+}
+
+.side-nav-toggle {
+  position: absolute;
+  top: $toggle-x;
+  left: $toggle-y;
+}
+
+.side-nav .collapsible a.active, .side-nav .collapsible a:hover {
+  color: $main-color !important;
+}
+
+//.sidenav-active {
+//  color: $main-color !important;
+//}

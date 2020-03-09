@@ -2,7 +2,7 @@ export default {
   NAME: "English",
   CODE: "en",
   DIRECTION: "ltr",
-  SITE_NAME: "Recruitment gate",
+  SITE_NAME: "Fleet Board",
   COMMON: {
     FIELDS: {
       USER: {
@@ -22,10 +22,6 @@ export default {
         BIRTHDAY: "Birthday",
         GENDER: "Gender",
         REMEMBER_ME: "Remember Me",
-      },
-      JOB: {
-        TITLE: "Job Title",
-        LOCATION: "Job Location",
       },
       MIN: "Min",
       MAX: "Max",
@@ -113,33 +109,6 @@ export default {
       COMPLETED: "Completed",
       NOT_COMPLETED: "Not completed",
     },
-    GCC_COUNTRIES: {
-      BAHRAIN: "Bahrain",
-      KUWAIT: "Kuwait",
-      OMAN: "Oman",
-      QATAR: "Qatar",
-      SAUDI_ARABIA: "Saudi Arabia",
-      UAE: "UAE",
-    },
-    ACCOUNT_TYPE: {
-      HIRE: "Hire",
-      WORK: "Work",
-    },
-    COMPANY: {
-      SIZE: {
-        1: "1-9 Employees",
-        10: "10-49 Employees",
-        50: "50-99 Employees",
-        100: "100-499 Employees",
-        500: "500 Employees or more",
-      },
-      TYPE: {
-        PUBLIC: "Employer (Public Sector)",
-        PRIVATE: "Employer (Public Sector)",
-        NON_PROFIT: "Non-Profit Organization",
-        AGENCY: "Recruitment Agency",
-      },
-    },
     CARDINALS: {
       6: "6",
       20: "20",
@@ -179,256 +148,58 @@ export default {
       UNDEFINED: "Undefined",
       SELECT_ONE: "Select One",
     },
-    JOB_STATUS: {
+    STATUS: {
       ACTIVE: "Active",
       INACTIVE: "Inactive",
+      ENABLED: "Enabled",
+      DISABLED: "Disabled",
+      SUBMITTED: "Submitted",
+      NOT_SUBMITTED: "Not Submitted",
     },
   },
   NAVBAR: {
     HOME: "Home",
-    //HIRE===========================================
-    HIRE: {
-      WORKPLACE: {
-        ROOT: "Workplace",
-        DASHBOARD: "Dashboard",
-        QUESTIONNAIRE: "Questionnaire",
-        LETTERS: "Letters",
-        MY_COMPANY_PROFILES: "My Company Profiles",
-        EMPLOYER_TEST: "Employer test",
-      },
-      MY_JOBS: {
-        ROOT: "My Jobs",
-        POST_A_JOB: "Post a Job",
-        MY_JOBS: "My Jobs",
-        DRAFT_JOBS: "Draft Jobs",
-      },
-      CV_SERVICES: {
-        ROOT: "CV Services",
-        CV_SEARCH: "CV Search",
-        MY_SAVED_SEARCHES: "My Saved Searches",
-        CV_FOLDERS: "CV Folders",
-      },
-      HR_COMMUNITY: {
-        ROOT: "HR Community",
-        NEWS_FEED: "News Feed",
-        MY_QUESTIONS: "My Questions",
-        MY_ANSWERS: "My Answers",
-        MY_NETWORK: "My Network",
-        FIND_PEOPLE: "Find People",
-        MY_RANK: "My Rank",
-      },
-      CONTACT_US: {
-        ROOT: "Contact Us",
-        MAIN: "Contact Us",
-      },
+    DRIVERS: {
+      ROOT: "Drivers",
+      LIST: "Drivers List",
+      DETAILS: "Driver Details",
+      ADD: "Add Driver",
+      EDIT: "Edit Driver",
     },
-    //WORK===========================================
-    WORK: {
-      FIND_JOBS: {
-        ROOT: "Find Jobs",
-        FIND_JOBS: "Find Jobs",
-        RECOMMENDED_JOBS: "Recommended Jobs",
-        SAVED_JOBS: "Saved Jobs",
-        MY_JOB_ALERTS: "My Job Alerts",
-        ADVANCED_SEARCH: "Advanced Search",
-        BROWSE_JOBS: "Browse Jobs",
-        JOBS_BY_ROLE: "Jobs by Role",
-        JOBS_BY_LOCATION: "Jobs by Location",
-        JOBS_BY_SECTOR: "Jobs by Sector",
-        JOBS_BY_COMPANIES: "Jobs by Companies",
-        EXECUTIVE_JOBS: "Executive Jobs",
-        SALARIES: "Salaries",
-      },
-      MY_CV: {
-        ROOT: "My CV",
-        MY_CV: "My CV",
-        MY_OTHER_PROFILES: "My Other Profiles",
-        COVER_LETTERS: "Cover Letters",
-        BLOG: "Blog",
-      },
-      MY_APPLICATIONS: {
-        ROOT: "My Applications",
-        MAIN: "My Applications",
-      },
-      MY_VISIBILITY: {
-        ROOT: "My Visibility",
-        MY_VISIBILITY: "My Visibility",
-        WHO_VIEWED_MY: "Who Viewed My",
-      },
-      CV_SERVICES: {
-        ROOT: "CV Services",
-        PROFESSIONAL_CV: "Professional CV",
-        VISUAL_CV_TEMPLATES: "Visual CV Templates",
-        COVER_LETTER_WRITING: "Cover Letter Writing",
-        CV_EVALUATION: "CV Evaluation",
-      },
+    LOCATION: {
+      ROOT: "Location",
+      MAIN: "My Location",
+      MAP: "Map",
+    },
+    COMMISSION: {
+      ROOT: "Commission",
+      MAIN: "Commission",
     },
   },
-  HIRE: {
-    PAGE_TITLE: "Employers",
-    ACCOUNT: {
-      FIELDS: {
-        COMPANY: {
-          NAME: "Company Name",
-          LOCATION: "Company Location",
-          SIZE: "Company Size",
-          TYPE: "Company Type",
-          TAX_REG_NUMBER: "Tax Registration Number",
-        },
-      },
-    },
-    WORKPLACE: {
-      QUESTIONNAIRE: {
-        FIELDS: {
-          NAME: "Name",
-          DESCRIPTION: "Description",
-          FILTER_BY_SCORE: "Filter applicants by their score",
-          MIN_SCORE: "Minimum Score",
-          QUESTION: "Question",
-          TYPE: "Type",
-          REQUIRED: "This question is mandatory",
-          REQUIRED2: "Mandatory",
-          ANSWERS: "Answers",
-          HAS_CORRECT_ANSWER: "Has correct answer?",
-          CORRECT_ANSWER: "Correct Answer",
-        },
-        ALL: {
-          NEW_ITEM_DESCRIPTION: "Please click this card to add a new questionnaire."
-        },
-        ADD: {
-          ADD_QUESTIONNAIRE: "Add Questionnaire",
-          EDIT_QUESTIONNAIRE: "Edit Questionnaire",
-        },
-        QUESTIONS: {
-          QUESTIONS: "Questions",
-          ANSWERS_PLACEHOLDER: "Enter answers by splitting with comma",
-          ADD_QUESTION: "Add Question",
-          EDIT_QUESTION: "Edit Question",
-        },
-      },
-      LETTERS: {
-        FIELDS: {
-          TYPE: "Letter Type",
-          NAME: "Letter Name",
-          SUBJECT: "Letter Subject",
-          MESSAGE: "Message",
-          ATTACHMENT: "Attachment",
-        },
-        TYPE: {
-          GENERIC: "Generic",
-          INTERVIEW: "Interview",
-          FOLLOWUP: "Followup",
-          ACCEPTANCE: "Acceptance",
-          REJECTION: "Rejection",
-          ON_BOARDING: "On Boarding",
-        },
-        ALL: {
-          NEW_ITEM_DESCRIPTION: "Please click this card to add a new letter."
-        },
-        ADD: {
-          ADD_LETTER: "Add Letter",
-          EDIT_LETTER: "Edit Letter",
-        },
-      },
-      MY_COMPANY_PROFILES: {
-        FIELDS: {
-          SALARY: {
-            UNIT: "Unit",
-            MIN: "Minimum",
-            MAX: "Maximum",
-          },
-          ABOUT: "About",
-          VISION: "Vision",
-          MISSION: "Mission",
-        },
-        SALARY: "Salary",
-        ABOUT: "About",
-        VISION: "Vision",
-        MISSION: "Mission",
-        COVER_PHOTO: "Cover Photo",
-      },
-      EMPLOYER_TEST: {
-        FIELD: {
+  DRIVERS: {
+    FIELDS: {
+      NAME: "Name",
+      MOBILE: "Mobile",
+      VEHICLE: "Vehicle",
+      LOCATION: "Location",
+      DOCUMENTS: "Documents",
+      BALANCE: "Balance",
+      PENDING: "Pending",
+      STATUS: "Status",
+      ACTION: "Action",
 
-        },
-        STEP1: "Send Test Invitation",
-        STEP2: "Invitation Status",
-        STEP3: "Test Result",
-      },
+      OPERATOR: "Operator",
+      LICENSE_NUMBER: "License Number",
+      VEHICLE_NAME: "Vehicle Name",
+      VEHICLE_TYPE: "Vehicle Type",
+      VEHICLE_BRAND: "Vehicle Brand",
+      VEHICLE_MODEL: "Vehicle Model",
+      VEHICLE_COLOR: "Vehicle Color",
+      VEHICLE_NUMBER: "Vehicle Number",
+      VEHICLE_IMAGE: "Vehicle Image",
+      DRIVER_IMAGE: "Driver Image",
     },
-    MY_JOBS: {
-      POST_A_JOB: {
-        STEPS: {
-          JOB_INFORMATION: "Job Information",
-          CANDIDATE_REQUIREMENTS: "Candidate Requirements",
-          ADD_SPECIALTIES: "Add Specialties",
-          ADD_QUESTIONNAIRE: "Add Questionnaire",
-        },
-        CANDIDATE_TYPE: {
-          PROFESSIONAL: "Professional (Lawyer, Engineer, Marketing associate, Sales manager, Accountant, etc.)",
-          SKILLED: "Skilled-trade Worker (Mechanic, Welder, Driver, Plumber, Security Staff, etc.)",
-        },
-        FIELDS: {
-          JOB_INFORMATION: {
-            CANDIDATE_TYPE: "Candidate Type",
-            TITLE: "Job Title",
-            ROLE: "Job Role",
-            SUBROLE: "Job Subrole",
-            SECTOR_N_INDUSTRY: "Company Sector & Industry",
-            SECTOR: "Company Sector",
-            INDUSTRY: "Company Industry",
-            LOCATION: "Job Location",
-            COUNTRY: "Country",
-            CITY: "City",
-            EMPLOYMENT_TYPE: "Employment Type",
-            SALARY_RANGE: "Monthly Salary Range",
-            VACANCIES_COUNT: "Number of Vacancies",
-            DESCRIPTION: "Job Description",
-            SKILLS: "Desired Skills",
-          },
-          CANDIDATE_REQUIREMENTS: {
-            EXPERIENCE: "Experience",
-            CAREER_LEVEL: "Career Level",
-            YEAR_OF_EXPERIENCE: "Year of Experience",
-            EDUCATION: "Education",
-            MAJOR: "Major",
-            DEGREE: "Degree",
-            PERSONAL_INFORMATION: "Personal Information",
-            LOCATION: "Residence Location",
-            NATIONALITY: "Nationality",
-            GENDER: "Gender",
-            AGE: "Age",
-          },
-          ADD_SPECIALTIES: {
-            SUBHEADING: "Reach your target audience by tagging your Job Posting with professional specialties.",
-            SPECIALTIES: "Please add one specialties at least",
-          },
-          ADD_QUESTIONNAIRE: {
-            SUBHEADING: "Screen your candidates easily by adding any questions you may have. They will have the chance to provide their answers when they apply.",
-            QUESTIONNAIRE: "Add questions to learn about candidates",
-          },
-        },
-        ADD_QUESTIONNAIRE: {
-          NO_QUESTIONNAIRE: "I don't want to ask any questions",
-          ADD_QUESTIONNAIRE: "Create your questions",
-        },
-        BUTTON: {
-          POST: "Post Job",
-          EDIT: "Edit Job",
-        },
-        MESSAGE: {
-          SUCCESSFULLY_POSTED: "Your job is successfully posted",
-          SUCCESSFULLY_EDITED: "Your job is successfully edited",
-        },
-      },
-      MY_JOBS: {
-        FIELDS: {
-          TYPE: "Active Status",
-        },
-        EDIT_JOB: {
-          PAGE_TITLE: "Edit Job",
-        },
-      },
+    LIST: {
     },
   },
 };

@@ -10,6 +10,12 @@ export default ({component, type, ...props}) => {
   const pathname = history.location.pathname;
   const signInPath = routes.auth.signIn;
 
+  if (pathname === routes.root) {
+    return (
+      <Redirect to={routes.drivers.list}/>
+    )
+  }
+
   return (
     !auth.signedIn && pathname !== signInPath ? <Redirect to={`${signInPath}?redirect=${encodeURI(pathname)}`}/> : <Route component={component} {...props}/>
   );

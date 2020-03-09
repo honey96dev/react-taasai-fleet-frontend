@@ -39,7 +39,7 @@ input:-webkit-autofill {
 }
 
 body {
-  background-image: url("./img/bg/circle-chain-md.png");
+  //background-image: url("./img/bg/circle-chain-md.png");
   background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
@@ -47,7 +47,26 @@ body {
 
 @media (min-width: $screen-breakpoint-md) {
   body {
-    background-image: url("./img/bg/circle-chain.png");
+    //background-image: url("./img/bg/circle-chain.png");
+  }
+}
+
+.content-with-sidenav {
+
+}
+@media (min-width: $screen-breakpoint-xl) {
+  .content-with-sidenav {
+    margin-left: $sidenav-width;
+  }
+}
+
+.page-margin-top {
+  margin-top: calc(#{$page-margin-top} * 0.8) !important;
+}
+
+@media (min-width: $screen-breakpoint-md) {
+  .page-margin-top {
+    margin-top: $page-margin-top !important;
   }
 }
 
@@ -182,6 +201,12 @@ button i, button div.spinner-grow, button div.spinner-border {
   right: 0;
   bottom: 0;
 }
+
+//@media (min-width: $screen-breakpoint-xl) {
+//  .match-parent {
+//    left: $sidenav-width;
+//  }
+//}
 
 .center-in-parent {
   position: absolute;
@@ -423,6 +448,10 @@ textarea.form-control {
   opacity: 1 !important;
   background-color: rgba(0, 0, 0, 0.5);
   transition: $transition-time ease-in;
+}
+
+.side-nav .collapsible > li a.collapsible-header.active {
+  background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
 .rtl-content {

@@ -23,6 +23,7 @@
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
     "react-i18next": "^11.3.3",
+    "react-phone-number-input": "^3.0.21",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scroll": "^1.7.16",
@@ -44,7 +45,7 @@
     "copyfiles": "^2.2.0",
     "node-sass": "^4.13.1",
     "prop-types": "latest",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "3.0.1",
     "redux-devtools-extension": "^2.13.8",
     "renamer": "^1.1.4",
     "rimraf": "^3.0.2"
