@@ -222,13 +222,28 @@ export default {
       VEHICLE_IMAGE: "Vehicle Image",
       DRIVER_IMAGE: "Driver Image",
     },
+    DETAILS: {
+      INFORMATION: {
+        HEADING: "Information",
+      },
+      HISTORY: {
+        HEADING: "History",
+      },
+    },
     LIST: {
     },
   },
   COMMISSION: {
     FIELDS: {
       PASSENGER: "Passenger",
-
+      PICKUP_LOCATION: "Pickup Location",
+      DROP_LOCATION: "Drop Location",
+      BOOKING_TIME: "Booking Time",
+      DURATION: "Duration",
+      FARE: "Fare",
+      COMMISSION: "Commission",
+      FLEET_COMMISSION: "Fleet Commission",
+      STATUS: "Status",
     },
   },
 };

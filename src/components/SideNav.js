@@ -1,6 +1,6 @@
 import React, {Fragment, useEffect, useState} from "react";
 import {
-  MDBBtn,
+  MDBBtn, MDBCard,
   MDBIcon,
   MDBNavbar,
   MDBNavbarNav, MDBNavItem, MDBNavLink,
@@ -98,23 +98,31 @@ export default () => {
               {t("NAVBAR.DRIVERS.ADD")}
             </MDBSideNavLink>
           </MDBSideNavCat>
-          <MDBSideNavCat
-            name={t("NAVBAR.LOCATION.ROOT")}
-            id={t("NAVBAR.LOCATION.ROOT")}
-            isOpen={pathname.startsWith(routes.location.root)}
-            icon="map-marker-alt"
-          >
-            {/*<MDBSideNavLink to={routes.location.main}>{t("NAVBAR.LOCATION.MAIN")}</MDBSideNavLink>*/}
-            <MDBSideNavLink to={routes.location.map}>{t("NAVBAR.LOCATION.MAP")}</MDBSideNavLink>
-          </MDBSideNavCat>
-          <MDBSideNavCat
-            name={t("NAVBAR.COMMISSION.ROOT")}
-            id={t("NAVBAR.COMMISSION.ROOT")}
-            isOpen={pathname.startsWith(routes.commission.root)}
-            icon="money-bill"
-          >
-            <MDBSideNavLink to={routes.commission.main}>{t("NAVBAR.COMMISSION.MAIN")}</MDBSideNavLink>
-          </MDBSideNavCat>
+          {/*<MDBSideNavCat*/}
+          {/*  name={t("NAVBAR.LOCATION.ROOT")}*/}
+          {/*  id={t("NAVBAR.LOCATION.ROOT")}*/}
+          {/*  isOpen={pathname.startsWith(routes.location.root)}*/}
+          {/*  icon="map-marker-alt"*/}
+          {/*>*/}
+          {/*  /!*<MDBSideNavLink to={routes.location.main}>{t("NAVBAR.LOCATION.MAIN")}</MDBSideNavLink>*!/*/}
+          {/*  <MDBSideNavLink to={routes.location.map}>{t("NAVBAR.LOCATION.MAP")}</MDBSideNavLink>*/}
+          {/*</MDBSideNavCat>*/}
+          <MDBSideNavLink to={routes.location.map}>
+            <MDBIcon icon="map-marker-alt" className="mr-2"/>
+            {t("NAVBAR.LOCATION.MAP")}
+          </MDBSideNavLink>
+          {/*<MDBSideNavCat*/}
+          {/*  name={t("NAVBAR.COMMISSION.ROOT")}*/}
+          {/*  id={t("NAVBAR.COMMISSION.ROOT")}*/}
+          {/*  isOpen={pathname.startsWith(routes.commission.root)}*/}
+          {/*  icon="money-bill"*/}
+          {/*>*/}
+          {/*  <MDBSideNavLink to={routes.commission.main}>{t("NAVBAR.COMMISSION.MAIN")}</MDBSideNavLink>*/}
+          {/*</MDBSideNavCat>*/}
+          <MDBSideNavLink to={routes.commission.main}>
+            <MDBIcon icon="money-bill" className="mr-2"/>
+            {t("NAVBAR.COMMISSION.MAIN")}
+          </MDBSideNavLink>
         </MDBSideNavNav>
       </MDBSideNav>
         {/*<MDBBtn tag="a" floating size="sm" color="mdb-color" className="side-nav-toggle" onClick={e => setIsOpen(!isOpen)}><MDBIcon icon="bars" /></MDBBtn>*/}

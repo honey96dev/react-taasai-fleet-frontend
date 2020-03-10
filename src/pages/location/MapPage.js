@@ -11,7 +11,6 @@ import toast from "components/MyToast";
 import Service from "services/MapService";
 
 import "./MapPage.scss";
-import {parse} from "query-string";
 
 export default () => {
   const {t} = useTranslation();
@@ -60,7 +59,6 @@ export default () => {
     loadData();
   }, []);
 
-  console.log(markers, center);
   const payload = () => (
     <Fragment>
       <Helmet>

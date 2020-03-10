@@ -1,0 +1,14 @@
+@import "../../../assets/consts";
+
+$image-width: 300px;
+$image-height: 300px;
+
+.vehicle-image-wrapper, .driver-image-wrapper {
+}
+
+.vehicle-image-wrapper img, .driver-image-wrapper img {
+  margin-left: auto;
+  margin-right: auto;
+  width: $image-width;
+  height: $image-height;
+}

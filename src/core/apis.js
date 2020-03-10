@@ -24,6 +24,7 @@ export default {
   drivers: {
     list: "drivers/list",
     get: "drivers/get",
+    history: "drivers/history",
     add: "drivers/add",
     delete: "drivers/delete",
   },

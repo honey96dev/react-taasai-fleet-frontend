@@ -25,6 +25,17 @@ export default {
     });
   },
 
+  history: (params) => {
+    return new Promise((resolve, reject) => {
+      fetch(POST, apis.drivers.history, params)
+        .then(res => {
+          resolve(res);
+        }, err => {
+          reject(err);
+        });
+    });
+  },
+
   add: (params) => {
     return new Promise((resolve, reject) => {
       fetch(POST, apis.drivers.add, params)
