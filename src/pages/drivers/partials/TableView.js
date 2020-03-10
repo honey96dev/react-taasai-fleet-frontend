@@ -4,7 +4,7 @@ import {useTranslation} from "react-i18next";
 import {Base64} from "js-base64";
 import {useHistory} from "react-router-dom";
 
-export default ({items, page, detailLink, editLink, onDelete}) => {
+export default ({items, page, detailLink, editLink, onActivate}) => {
   const {t} = useTranslation();
   const history = useHistory();
 
@@ -61,8 +61,8 @@ export default ({items, page, detailLink, editLink, onDelete}) => {
               <MDBBtn tag="a" floating color="secondary" size="sm" className="mx-2" onClick={e => !!handleEdit && handleEdit(item.id)}>
                 <MDBIcon icon="edit"/>
               </MDBBtn>
-              <MDBBtn tag="a" floating color="danger" size="sm" onClick={e => !!onDelete && onDelete({item, index})}>
-                <MDBIcon icon="trash"/>
+              <MDBBtn tag="a" floating color={item.is_active ? "danger" : "success"} size="sm" onClick={e => !!onActivate && onActivate({item, index})}>
+                <MDBIcon icon={item.is_active ? "times" : "check"}/>
               </MDBBtn>
             </td>
           </tr>

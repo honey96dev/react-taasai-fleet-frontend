@@ -22,7 +22,7 @@ export default () => {
       <SignedInRoute path={routes.drivers.root} component={DriversPage}/>
       <SignedInRoute path={routes.commission.root} component={CommissionPage}/>
       <SignedInRoute path={routes.location.root} component={LocationPage}/>
-      {/*<SignedInRoute path={routes.root} component={DriversPage}/>*/}
+      <SignedInRoute path={routes.root} component={ProfilePage}/>
 
       <Route component={Error404Page}/>
     </Switch>

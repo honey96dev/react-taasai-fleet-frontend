@@ -84,7 +84,27 @@ export default () => {
   const deleteItem = ({id}) => {
     toggleModal();
     setLoading(true);
-    Service.delete({page, pageSize: 10, id: modal.deleteId, userId: user.id})
+    Service.delete({page, pageSize: 10, id: modal.itemId, userId: user.id})
+      .then(res => {
+        if (res.result === RESULT.SUCCESS) {
+          setPageCount(res.pageCount);
+          setItems(res.data);
+          // toast.success(res.message);
+        } else {
+          toast.error(res.message);
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+        toast.error(t("COMMON.ERROR.UNKNOWN_SERVER_ERROR"));
+        setLoading(false);
+      });
+  };
+
+  const activateItem = ({id}) => {
+    toggleModal();
+    setLoading(true);
+    Service.activate({page, pageSize: 10, userId: user.id, data: modal.data})
       .then(res => {
         if (res.result === RESULT.SUCCESS) {
           setPageCount(res.pageCount);
@@ -106,7 +126,24 @@ export default () => {
   };
 
   const handleDeleteItem = ({id, item}) => {
-    setModal(Object.assign({}, modal, {show: true, title: t("COMMON.BUTTON.DELETE"), message: t("COMMON.QUESTION.DELETE", {item: item.name}), deleteId: item.id}));
+    setModal(Object.assign({}, modal, {show: true, title: t(`COMMON.BUTTON.${item.is_active ? "DEACTIVATE" : "ACTIVATE"}`), message:  t(`COMMON.QUESTION.${item.is_active ? "DEACTIVATE" : "ACTIVATE"}`, {item: item.name}), itemId: item.id}));
+  };
+
+  const handleActivateItem = ({id, item}) => {
+    const buttonText = t(`COMMON.BUTTON.${item.is_active ? "DEACTIVATE" : "ACTIVATE"}`);
+    setModal(Object.assign({}, modal, {
+      show: true,
+      title: t(`COMMON.BUTTON.${item.is_active ? "DEACTIVATE" : "ACTIVATE"}`),
+      message: t(`COMMON.QUESTION.${item.is_active ? "DEACTIVATE" : "ACTIVATE"}`, {item: item.name}),
+      data: {
+        id: item.id,
+        is_active: !item.is_active,
+      },
+      primaryButton: {
+        color: item.is_active ? "danger" : "success",
+        text: buttonText,
+      },
+    }));
   };
 
   useEffect(e => {
@@ -168,7 +205,7 @@ export default () => {
             <div className="my-4 text-center">
               <Pagination circle current={currentPage} pageCount={pageCount} onChange={handlePageChange}/>
             </div>
-            <TableView items={items} page={page} detailLink={routes.drivers.detail} editLink={routes.drivers.add} onDelete={handleDeleteItem}/>
+            <TableView items={items} page={page} detailLink={routes.drivers.detail} editLink={routes.drivers.add} onActivate={handleActivateItem}/>
             {/*<ListView items={items} page={page} newLink={addUrl} detailLabel={t("COMMON.BUTTON.EDIT")} detailLink={detailLink} deleteLabel={t("COMMON.BUTTON.DELETE")} onDelete={handleDeleteItem} questionsLink={questionsUrl} questionsLabel={t("HIRE.WORKPLACE.QUESTIONNAIRE.QUESTIONS.QUESTIONS")} />*/}
             <div className="mt-4 text-center">
               <Pagination circle current={currentPage} pageCount={pageCount} onChange={handlePageChange}/>
@@ -180,7 +217,7 @@ export default () => {
         <MDBModalHeader toggle={toggleModal}>{modal.title}</MDBModalHeader>
         <MDBModalBody className="text-left">{modal.message}</MDBModalBody>
         <MDBModalFooter>
-          <MDBBtn type="button" color="danger" size="sm" rounded onClick={deleteItem}>{t("COMMON.BUTTON.DELETE")}</MDBBtn>
+          <MDBBtn type="button" color={!!modal.primaryButton && modal.primaryButton.color} size="sm" rounded onClick={activateItem}>{!!modal.primaryButton && modal.primaryButton.text}</MDBBtn>
           <MDBBtn type="button" color="secondary" size="sm" rounded onClick={toggleModal}>{t("COMMON.BUTTON.CANCEL")}</MDBBtn>
         </MDBModalFooter>
       </MDBModal>

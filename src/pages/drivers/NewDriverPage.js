@@ -121,7 +121,7 @@ export default () => {
 
   const loadData = () => {
     setLoading(true);
-    Service.get({id: urlParams.id})
+    Service.get({id: urlParams.id, userId: user.id})
       .then(res => {
         if (res.result === RESULT.SUCCESS) {
           const {data} = res;

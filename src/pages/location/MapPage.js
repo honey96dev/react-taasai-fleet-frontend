@@ -3,7 +3,7 @@ import {MDBBreadcrumb, MDBBreadcrumbItem} from "mdbreact";
 import {useTranslation} from "react-i18next";
 import {Helmet} from "react-helmet";
 import {useSelector} from "react-redux";
-import {GoogleMap, LoadScript, Marker} from "@react-google-maps/api";
+import {GoogleMap, InfoBox, LoadScript, Marker} from "@react-google-maps/api";
 
 import images from "core/images";
 import {RESULT} from "core/globals";
@@ -87,7 +87,11 @@ export default () => {
           }}
         >
           {markers.map((item, index) => (
-            <Marker key={index} position={item} icon={images.icons.car} />
+            <Marker key={index} position={item} icon={images.icons.car} label={item.name} >
+              <InfoBox >
+                <p>{item.name}</p>
+              </InfoBox>
+            </Marker>
           ))}
         </GoogleMap>
       </LoadScript>

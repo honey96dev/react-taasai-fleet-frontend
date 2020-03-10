@@ -57,4 +57,15 @@ export default {
         });
     });
   },
+
+  activate: (params) => {
+    return new Promise((resolve, reject) => {
+      fetch(POST, apis.drivers.activate, params)
+        .then(res => {
+          resolve(res);
+        }, err => {
+          reject(err);
+        });
+    });
+  },
 };

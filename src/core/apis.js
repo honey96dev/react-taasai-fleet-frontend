@@ -27,6 +27,7 @@ export default {
     history: "drivers/history",
     add: "drivers/add",
     delete: "drivers/delete",
+    activate: "drivers/activate",
   },
   map: {
     drivers: "map/drivers",
