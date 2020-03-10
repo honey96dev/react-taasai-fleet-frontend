@@ -159,6 +159,10 @@ export default {
   },
   NAVBAR: {
     HOME: "Home",
+    PROFILE: {
+      ROOT: "Profile",
+      MAIN: "Profile",
+    },
     DRIVERS: {
       ROOT: "Drivers",
       LIST: "Drivers List",
@@ -174,6 +178,25 @@ export default {
     COMMISSION: {
       ROOT: "Commission",
       MAIN: "Commission",
+    },
+  },
+  PROFILE: {
+    FIELDS: {
+      INFORMATION: "Information",
+      EMAIL: "Email",
+      NAME: "Name",
+      OPERATOR: "Operator",
+      DRIVERS: "Number of Drivers",
+
+      BALANCE: "Balance",
+      LIVE_BALANCE: "Live Balance",
+      INCOME_PENDING: "Pending Balance",
+      OUTGO_PENDING: "Withdraw Pending",
+
+      PASSWORD: "Password",
+      CURRENT_PASSWORD: "Current Password",
+      NEW_PASSWORD: "New Password",
+      CONFIRM: "Confirm",
     },
   },
   DRIVERS: {
@@ -200,6 +223,12 @@ export default {
       DRIVER_IMAGE: "Driver Image",
     },
     LIST: {
+    },
+  },
+  COMMISSION: {
+    FIELDS: {
+      PASSENGER: "Passenger",
+
     },
   },
 };

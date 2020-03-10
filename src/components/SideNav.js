@@ -81,6 +81,10 @@ export default () => {
         breakWidth={SIDE_NAV.BREAKPOINT}
       >
         <MDBSideNavNav>
+          <MDBSideNavLink to={routes.profile.main}>
+            <MDBIcon icon="user" className="mr-2"/>
+            {t("NAVBAR.PROFILE.MAIN")}
+          </MDBSideNavLink>
           <MDBSideNavCat
             name={t("NAVBAR.DRIVERS.ROOT")}
             id={t("NAVBAR.DRIVERS.ROOT")}
@@ -100,7 +104,7 @@ export default () => {
             isOpen={pathname.startsWith(routes.location.root)}
             icon="map-marker-alt"
           >
-            <MDBSideNavLink to={routes.location.main}>{t("NAVBAR.LOCATION.MAIN")}</MDBSideNavLink>
+            {/*<MDBSideNavLink to={routes.location.main}>{t("NAVBAR.LOCATION.MAIN")}</MDBSideNavLink>*/}
             <MDBSideNavLink to={routes.location.map}>{t("NAVBAR.LOCATION.MAP")}</MDBSideNavLink>
           </MDBSideNavCat>
           <MDBSideNavCat

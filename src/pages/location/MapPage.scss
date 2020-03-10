@@ -1,0 +1,17 @@
+@import "../../assets/consts";
+
+.map-container {
+  height: 600px;
+}
+
+@media (min-width: 992px) {
+  .map-container {
+    height: 700px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .map-container {
+    height: 750px;
+  }
+}

@@ -9,6 +9,10 @@ export const routes = {
     forgotPassword: "/auth/forgot-password",
     resetPassword: "/auth/reset-password",
   },
+  profile: {
+    root: "/profile",
+    main: "/profile/main",
+  },
   drivers: {
     root: "/drivers",
     list: "/drivers/list",

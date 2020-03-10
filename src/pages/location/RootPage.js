@@ -9,8 +9,7 @@ import Error404 from "components/Error404";
 
 import "./RootPage.scss";
 
-const AllDriversPage = lazy(() => import("./AllDriversPage"));
-const NewDriverPage = lazy(() => import("./NewDriverPage"));
+const MapPage = lazy(() => import("./MapPage"));
 
 export default () => {
   const {t} = useTranslation();
@@ -20,8 +19,7 @@ export default () => {
       <div className="content-with-sidenav">
         <div className="page-margin-top mx-lg-4 mx-3">
           <Switch>
-            <Route path={`${routes.drivers.add}/:params?`} component={NewDriverPage}/>
-            <Route path={`${routes.drivers.list}/:page?`} component={AllDriversPage}/>
+            <Route path={`${routes.location.map}`} component={MapPage}/>
             <Route component={Error404}/>
           </Switch>
         </div>

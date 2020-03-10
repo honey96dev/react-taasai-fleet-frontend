@@ -12,7 +12,7 @@ export default ({component, type, ...props}) => {
 
   if (pathname === routes.root) {
     return (
-      <Redirect to={routes.drivers.list}/>
+      <Redirect to={routes.profile.main}/>
     )
   }
 

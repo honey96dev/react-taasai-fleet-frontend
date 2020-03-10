@@ -15,11 +15,23 @@ export default {
     validateToken: "auth/validate-token",
     resetPassword: "auth/reset-password",
   },
+  profile: {
+    avatar: "profile/avatar",
+    saveAvatar: "profile/save-avatar",
+    save: "profile/save",
+    changePassword: "profile/change-password",
+  },
   drivers: {
     list: "drivers/list",
     get: "drivers/get",
     add: "drivers/add",
     delete: "drivers/delete",
+  },
+  map: {
+    drivers: "map/drivers",
+  },
+  commission: {
+    list: "commission/list",
   },
   account: {
     avatar: "account/avatar",
@@ -27,11 +39,5 @@ export default {
     savePersonalInfo: "account/save-personal-info",
     changePassword: "account/change-password",
     changeAccountType: "account/change-account-type",
-  },
-  profile: {
-    avatar: "profile/avatar",
-    saveAvatar: "profile/save-avatar",
-    save: "profile/save",
-    changePassword: "profile/change-password",
   },
 };

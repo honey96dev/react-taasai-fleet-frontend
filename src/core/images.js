@@ -9,4 +9,7 @@ export default {
     auth: require("assets/img/bg/auth.png"),
     front: require("assets/img/bg/front.png"),
   },
+  icons: {
+    car: require("assets/img/icons/car.png"),
+  },
 };
