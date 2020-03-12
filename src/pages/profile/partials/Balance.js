@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import {MDBCard, MDBCardBody, MDBCol, MDBInput, MDBRow} from "mdbreact";
 import {useTranslation} from "react-i18next";
 
-import "./Information.scss";
+import "./Balance.scss";
 
 export default () => {
   const {t} = useTranslation();

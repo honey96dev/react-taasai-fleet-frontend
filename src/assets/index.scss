@@ -8,7 +8,7 @@
   }
 }
 
-input[type]:-webkit-autofill:not(.browser-default):not([type=search])+label {
+input[type]:-webkit-autofill:not(.browser-default):not([type=search]) + label {
   -webkit-transform: unset !important;
   transform: unset !important;
 }
@@ -54,6 +54,7 @@ body {
 .content-with-sidenav {
 
 }
+
 @media (min-width: $screen-breakpoint-xl) {
   .content-with-sidenav {
     margin-left: $sidenav-width;
@@ -251,7 +252,7 @@ textarea.form-control {
   border-radius: 4px !important;
 }
 
-.breadcrumb-item+.breadcrumb-item::before {
+.breadcrumb-item + .breadcrumb-item::before {
   content: ">";
 }
 
@@ -301,12 +302,11 @@ textarea.form-control {
 }
 
 .text-stroke-white-2 {
-  text-shadow:
-          -2px -2px 0 #fff,
-          2px -2px 0 #fff,
-          -2px 2px 0 #fff,
-          2px 2px 0 #fff,
-          4px 4px 10px $gray;
+  text-shadow: -2px -2px 0 #fff,
+  2px -2px 0 #fff,
+  -2px 2px 0 #fff,
+  2px 2px 0 #fff,
+  4px 4px 10px $gray;
 }
 
 .text-stroke-2 {
@@ -418,6 +418,7 @@ textarea.form-control {
 .max-height-200 {
   max-height: 200px;
 }
+
 //
 //.note-btn {
 //  padding-left: 0 !important;
@@ -452,6 +453,22 @@ textarea.form-control {
 
 .side-nav .collapsible > li a.collapsible-header.active {
   background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.bg-info-light25 {
+  background-color: #9fd0d8 !important;
+}
+
+.bg-danger-light25 {
+  background-color: #f8c9ca !important;
+}
+
+.bg-success-light25 {
+  background-color: #c0e2c2 !important;
+}
+
+.circle {
+  border-radius: 100px !important;
 }
 
 .rtl-content {
@@ -645,12 +662,12 @@ textarea.form-control {
     margin-right: .255em;
   }
 
-  .breadcrumb-item+.breadcrumb-item {
+  .breadcrumb-item + .breadcrumb-item {
     padding-left: unset;
     padding-right: .5rem;
   }
 
-  .breadcrumb-item+.breadcrumb-item::before {
+  .breadcrumb-item + .breadcrumb-item::before {
     padding-left: .5rem;
     padding-right: unset;
     //content: "<" !i;
@@ -668,7 +685,7 @@ textarea.form-control {
   }
 
   .modal-header .close {
-    margin: -1rem auto -1rem -1rem ;
+    margin: -1rem auto -1rem -1rem;
   }
 
 
@@ -690,7 +707,7 @@ textarea.form-control {
     margin-right: unset;
   }
 
-  .form-check-input[type="radio"]:not(:checked) + label, .form-check-input[type="radio"]:checked + label, label.btn input[type="radio"]:not(:checked) + label, label.btn input[type="radio"]:checked + label, .form-check-input[type="checkbox"]:not(:checked) + label, .form-check-input[type="checkbox"]:checked + label, label.btn input[type="checkbox"]:not(:checked) + label, label.btn input[type="checkbox"]:checked + label{
+  .form-check-input[type="radio"]:not(:checked) + label, .form-check-input[type="radio"]:checked + label, label.btn input[type="radio"]:not(:checked) + label, label.btn input[type="radio"]:checked + label, .form-check-input[type="checkbox"]:not(:checked) + label, .form-check-input[type="checkbox"]:checked + label, label.btn input[type="checkbox"]:not(:checked) + label, label.btn input[type="checkbox"]:checked + label {
     padding-left: unset;
     padding-right: 35px;
   }

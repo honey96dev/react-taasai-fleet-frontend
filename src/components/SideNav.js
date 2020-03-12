@@ -11,25 +11,27 @@ import {
 } from "mdbreact";
 import {useTranslation} from "react-i18next";
 import {useHistory} from "react-router-dom";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
-import {SIDE_NAV} from "core/globals"
+import {RESULT, SIDE_NAV} from "core/globals"
 import images from "core/images";
 import routes from "core/routes";
 import authActions from "actions/auth";
 import AuthService from "services/AuthService";
+import ProfileService from "services/ProfileService";
 
 import "./SideNav.scss";
-import useDebounce from "../helpers/useDebounce";
 
 export default () => {
   const {t} = useTranslation();
+  const {auth: {user}} = useSelector(state => state);
   const dispatch = useDispatch();
   const history = useHistory();
 
   const pathname = history.location.pathname;
 
   const [windowWidth, setWindowWidth] = useState(0);
+  const [balance, setBalance] = useState({});
 
   const navStyle = {
     paddingLeft: windowWidth > SIDE_NAV.BREAKPOINT ? "210px" : "16px"
@@ -47,6 +49,20 @@ export default () => {
     flexDirection: "row"
   };
 
+  const loadBalances = e => {
+    ProfileService.getBalances({id: user.id})
+      .then(res => {
+        if (res.result === RESULT.SUCCESS) {
+          setBalance(res.data);
+        } else {
+          setBalance({});
+        }
+      })
+      .catch(err => {
+        setBalance({});
+      });
+  };
+
   const handleResize = e => {
     setWindowWidth(window.innerWidth);
   };
@@ -59,6 +75,8 @@ export default () => {
   useEffect(e => {
     handleResize();
     window.addEventListener("resize", handleResize);
+    // loadBalances();
+
     return (e => {
       window.removeEventListener("resize", handleResize);
     });
@@ -81,6 +99,10 @@ export default () => {
         breakWidth={SIDE_NAV.BREAKPOINT}
       >
         <MDBSideNavNav>
+          <MDBSideNavLink to={routes.dashboard.main}>
+            <MDBIcon icon="tachometer-alt" className="mr-2"/>
+            {t("NAVBAR.DASHBOARD.MAIN")}
+          </MDBSideNavLink>
           <MDBSideNavLink to={routes.profile.main}>
             <MDBIcon icon="user" className="mr-2"/>
             {t("NAVBAR.PROFILE.MAIN")}

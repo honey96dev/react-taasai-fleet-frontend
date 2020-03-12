@@ -9,6 +9,10 @@ export const routes = {
     forgotPassword: "/auth/forgot-password",
     resetPassword: "/auth/reset-password",
   },
+  dashboard: {
+    root: "/dashboard",
+    main: "/dashboard/main",
+  },
   profile: {
     root: "/profile",
     main: "/profile/main",

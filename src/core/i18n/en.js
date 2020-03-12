@@ -159,6 +159,10 @@ export default {
   },
   NAVBAR: {
     HOME: "Home",
+    DASHBOARD: {
+      ROOT: "Dashboard",
+      MAIN: "Dashboard",
+    },
     PROFILE: {
       ROOT: "Profile",
       MAIN: "Profile",
@@ -180,6 +184,19 @@ export default {
       MAIN: "Commission",
     },
   },
+  DASHBOARD: {
+    FIELDS: {
+      STATS: "Stats",
+      TOTAL_RIDES: "Total Rides",
+      EARNING: "Earning",
+      DRIVERS: "Drivers",
+
+      BALANCE: "Balance",
+      LIVE_BALANCE: "Live Balance",
+      INCOME_PENDING: "Pending Balance",
+      OUTGO_PENDING: "Withdraw Pending",
+    },
+  },
   PROFILE: {
     FIELDS: {
       INFORMATION: "Information",
@@ -187,11 +204,6 @@ export default {
       NAME: "Name",
       OPERATOR: "Operator",
       DRIVERS: "Number of Drivers",
-
-      BALANCE: "Balance",
-      LIVE_BALANCE: "Live Balance",
-      INCOME_PENDING: "Pending Balance",
-      OUTGO_PENDING: "Withdraw Pending",
 
       PASSWORD: "Password",
       CURRENT_PASSWORD: "Current Password",

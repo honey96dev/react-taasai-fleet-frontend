@@ -7,6 +7,7 @@ import SignedOutRoute from "components/SignedOutRoute";
 import Error404Page from "pages/common/Error404Page";
 
 const AuthPage = lazy(() => import("pages/auth/RootPage"));
+const DashboardPage = lazy(() => import("pages/dashboard/RootPage"));
 const ProfilePage = lazy(() => import("pages/profile/RootPage"));
 const DriversPage = lazy(() => import("pages/drivers/RootPage"));
 const CommissionPage = lazy(() => import("pages/commission/RootPage"));
@@ -18,6 +19,7 @@ export default () => {
     <Switch>
       <SignedOutRoute path={routes.auth.root} component={AuthPage}/>
 
+      <SignedInRoute path={routes.dashboard.root} component={DashboardPage}/>
       <SignedInRoute path={routes.profile.root} component={ProfilePage}/>
       <SignedInRoute path={routes.drivers.root} component={DriversPage}/>
       <SignedInRoute path={routes.commission.root} component={CommissionPage}/>

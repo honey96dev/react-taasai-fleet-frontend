@@ -5,6 +5,7 @@ import {Base64} from "js-base64";
 import {useHistory} from "react-router-dom";
 import dateformat from "dateformat";
 import numeral from "numeral";
+
 import {NUMERAL} from "core/globals";
 
 export default ({items, page}) => {
@@ -28,7 +29,6 @@ export default ({items, page}) => {
           <th>{t("COMMISSION.FIELDS.DURATION")}</th>
           <th>{t("COMMISSION.FIELDS.FARE")}</th>
           <th>{t("COMMISSION.FIELDS.COMMISSION")}</th>
-          <th>{t("COMMISSION.FIELDS.FLEET_COMMISSION")}</th>
           <th>{t("COMMISSION.FIELDS.STATUS")}</th>
         </tr>
       </MDBTableHead>
@@ -43,7 +43,6 @@ export default ({items, page}) => {
             <td>{item.duration}</td>
             <td>{item.total_fare}</td>
             <td>{numeral(item.operator_commission + item.fleet_commission).format(NUMERAL.FORMAT.FIXED_2)}</td>
-            <td>{numeral(item.fleet_commission).format(NUMERAL.FORMAT.FIXED_2)}</td>
             <td>
               <MDBBadge pill color="none" style={{backgroundColor: STATUS.colors[item.ride_status]}}>{STATUS.labels[item.ride_status]}</MDBBadge>
             </td>

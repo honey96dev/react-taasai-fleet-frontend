@@ -96,6 +96,13 @@ export const NAVBAR = {
   },
 };
 
+export const NUMERAL = {
+  FORMAT: {
+    FIXED_0: "0,0",
+    FIXED_2: "0,0.00",
+  },
+};
+
 export const PAGINATION = {
   WIDTH: 10,
   WIDTH_MOBILE: 6,
@@ -140,6 +147,7 @@ export default {
   GENDER,
   INPUT,
   NAVBAR,
+  NUMERAL,
   PAGINATION,
   RESULT,
   SCOPE,

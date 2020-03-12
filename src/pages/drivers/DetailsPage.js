@@ -1,5 +1,14 @@
 import React, {Fragment, useMemo, useState} from "react";
-import {MDBBreadcrumb, MDBBreadcrumbItem, MDBNav, MDBNavItem, MDBNavLink, MDBTabContent, MDBTabPane} from "mdbreact";
+import {
+  MDBBreadcrumb,
+  MDBBreadcrumbItem,
+  MDBCol,
+  MDBNav,
+  MDBNavItem,
+  MDBNavLink,
+  MDBTabContent,
+  MDBTabPane
+} from "mdbreact";
 import {useTranslation} from "react-i18next";
 import {Link, useHistory, useParams} from "react-router-dom";
 import {Helmet} from "react-helmet";
@@ -14,6 +23,10 @@ import Service from "services/DriverService";
 import DriverInformation from "./partials/DriverInformation";
 
 import "./DetailsPage.scss";
+import HistoryTableView from "./partials/HistoryTableView";
+import Pagination from "../../components/Pagination";
+import Loading from "../../components/Loading";
+import ErrorNoData from "../../components/ErrorNoData";
 
 export default () => {
   let {params, tab} = useParams();
@@ -26,9 +39,12 @@ export default () => {
   const [loading2, setLoading2] = useState(false);
   const [data, setData] = useState({});
   const [items, setItems] = useState([]);
+  const [page, setPage] = useState(1);
+  const [pageCount, setPageCount] = useState(0);
 
   const pageTitle = t("NAVBAR.DRIVERS.DETAILS");
   let backUrl = `${routes.drivers.list}/${urlParams.page || 1}`;
+  const currentPage = page || 1;
 
   const TABS = {
     INFORMATION: "Information",
@@ -52,8 +68,16 @@ export default () => {
     Service.get({id: urlParams.id, userId: user.id})
       .then(res => {
         if (res.result === RESULT.SUCCESS) {
-          res.data["vehicle_image"] = `${apis.assetsBaseUrl}${res.data["vehicle_image"]}`;
-          res.data["driver_image"] = `${apis.assetsBaseUrl}${res.data["driver_image"]}`;
+          const vehicle_image = res.data["vehicle_image"].split("/");
+          if (!!vehicle_image.length) {
+            vehicle_image.splice(0, 1);
+            res.data["vehicle_image"] = `${apis.assetsBaseUrl}${vehicle_image.join("/")}`;
+          }
+          const driver_image = res.data["driver_image"].split("/");
+          if (!!driver_image.length) {
+            driver_image.splice(0, 1);
+            res.data["driver_image"] = `${apis.assetsBaseUrl}${driver_image.join("/")}`;
+          }
           setData(res.data);
         } else {
           toast.error(res.message);
@@ -66,14 +90,18 @@ export default () => {
         toast.error(t("COMMON.ERROR.UNKNOWN_SERVER_ERROR"));
         setLoading(false);
       });
+  };
 
+  const loadHistory = e => {
     setLoading2(true);
-    Service.history({id: urlParams.id, userId: user.id})
+    Service.history({id: urlParams.id, userId: user.id, page})
       .then(res => {
         if (res.result === RESULT.SUCCESS) {
+          setPageCount(res.pageCount);
           setItems(res.data);
         } else {
           toast.error(res.message);
+          setPageCount(0);
           setItems([]);
         }
         setLoading2(false);
@@ -88,6 +116,15 @@ export default () => {
   const handleChangeTab = tab => {
     const pathname = `${routes.drivers.detail}/${params}/${tab}`;
     history.push(pathname);
+  };
+
+  const handlePageChange = page => {
+    // const params = Base64.encode(JSON.stringify({
+    //   id: urlParams.id,
+    //   page: page,
+    // }));
+    // history.push(`${routes.drivers.detail}/${params}/history`);
+    setPage(page);
   };
 
   useMemo(e => {
@@ -105,6 +142,10 @@ export default () => {
   useMemo(e => {
     !!urlParams.id && loadData();
   }, [urlParams.id]);
+
+  useMemo(e => {
+    !!urlParams.id && loadHistory();
+  }, [urlParams.id, page]);
 
   const payload = () => (
     <Fragment>
@@ -138,7 +179,17 @@ export default () => {
             <DriverInformation data={data}/>
           </MDBTabPane>
           <MDBTabPane tabId={TABS.HISTORY} role="tabpanel">
-            {/*<DriverHistory data={data}/>*/}
+            {!!loading2 && <Loading/>}
+            {!loading2 && !items.length && <ErrorNoData/>}
+            {!loading2 && !!items.length && <Fragment>
+              <div className="my-4 text-center">
+                <Pagination circle current={currentPage} pageCount={pageCount} onChange={handlePageChange}/>
+              </div>
+              <HistoryTableView items={items}/>
+              <div className="my-4 text-center">
+                <Pagination circle current={currentPage} pageCount={pageCount} onChange={handlePageChange}/>
+              </div>
+            </Fragment>}
           </MDBTabPane>
         </MDBTabContent>
       </div>

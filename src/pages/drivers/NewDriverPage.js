@@ -29,6 +29,7 @@ import {parsePhoneNumber} from "react-phone-number-input";
 import routes from "core/routes";
 import {AVATAR, EFFECT, FILE_UPLOAD, PROJECT, RESULT} from "core/globals";
 import helpers from "core/helpers";
+import apis from "core/apis";
 import validators from "core/validators";
 import goToBack from "helpers/goToBack";
 import toast from "components/MyToast";
@@ -38,7 +39,6 @@ import CoreService from "services/CoreService";
 
 import "react-phone-number-input/style.css";
 import "./NewDriverPage.scss";
-import apis from "../../core/apis";
 
 export default () => {
   const {params} = useParams();

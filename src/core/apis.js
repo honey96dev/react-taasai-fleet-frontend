@@ -19,6 +19,8 @@ export default {
     avatar: "profile/avatar",
     saveAvatar: "profile/save-avatar",
     save: "profile/save",
+    getStats: "profile/get-stats",
+    getBalances: "profile/get-balances",
     changePassword: "profile/change-password",
   },
   drivers: {
